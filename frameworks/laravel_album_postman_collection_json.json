@@ -1,0 +1,150 @@
+{
+	"info": {
+		"name": "Laravel - Album API (CRUD)",
+		"description": "Колекція запитів для тестування CRUD операцій сутності Album, реалізованих на фреймворку Laravel. Згенеровано автоматично для виконання завдання.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Отримати список альбомів",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/albums",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums"
+					]
+				},
+				"description": "Повертає масив усіх збережених альбомів (GET /api/albums)."
+			},
+			"response": []
+		},
+		{
+			"name": "2. Створити новий альбом",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The Wall\",\n    \"artist\": \"Michael Jackson\",\n    \"year\": 1982\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/albums",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums"
+					]
+				},
+				"description": "Створює новий запис альбому. Тіло запиту передається у форматі JSON (POST /api/albums)."
+			},
+			"response": []
+		},
+		{
+			"name": "3. Отримати альбом за ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/albums/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums",
+						"1"
+					]
+				},
+				"description": "Повертає детальну інформацію про конкретний альбом за його ідентифікатором (GET /api/albums/{id})."
+			},
+			"response": []
+		},
+		{
+			"name": "4. Оновити альбом",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"year\": 1983\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/albums/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums",
+						"1"
+					]
+				},
+				"description": "Часткове оновлення інформації про альбом (PATCH /api/albums/{id}). У цьому прикладі змінюється лише рік випуску."
+			},
+			"response": []
+		},
+		{
+			"name": "5. Видалити альбом",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/albums/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums",
+						"1"
+					]
+				},
+				"description": "Видаляє альбом за вказаним ідентифікатором (DELETE /api/albums/{id})."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
